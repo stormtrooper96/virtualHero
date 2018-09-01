@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     # skip_before_action :authorize_request, only: :create
     # POST /signup
     # return authenticated token upon signup
+    def getall #controlado por el GET
+      @users = User.all
+      render json: @users, status: :ok
+    end  
+  
     def create
       #si declaro con @ la variable está presente en toda la clase
       @rol=Rol.find(params[:rol])
@@ -31,4 +36,5 @@ class UsersController < ApplicationController
       new_params[:rol]=@rol
       return new_params
     end
+  
   end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #resources :skills do
   #  resources :rols, shallow: true
   #end
+  get 'users', to: 'users#getall' #primera forma de llamar el listado de users
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'
 end
