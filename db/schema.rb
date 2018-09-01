@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180825190819) do
+ActiveRecord::Schema.define(version: 20180901183004) do
 
   create_table "rols", force: :cascade do |t|
     t.string "description"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20180825190819) do
     t.string "resource"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "nickname"
+    t.string "avatar"
+    t.string "email"
+    t.string "state"
+    t.datetime "registrationdate"
+    t.string "password_digest"
+    t.integer "rol_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rol_id"], name: "index_users_on_rol_id"
   end
 
 end
