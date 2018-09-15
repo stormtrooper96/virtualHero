@@ -1,7 +1,7 @@
 # app/controllers/authentication_controller.rb
 class AuthenticationController < ApplicationController
     # return auth token once user is authenticated
-    skip_before_action :authorize_request, only: :authenticate
+#     skip_before_action :authorize_request, only: :authenticate
     # [...]
 
     def authenticate
@@ -17,8 +17,8 @@ class AuthenticationController < ApplicationController
     end
   end  
 
-class UsersController < ApplicationController
-    skip_before_action :authorize_request, only: :create
-    # [...]
-end
+# class UsersController < ApplicationController
+#     skip_before_action :authorize_request, only: :create
+#     # [...]
+# end
   
