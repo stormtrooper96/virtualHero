@@ -40,4 +40,4 @@ class AuthorizeApiRequest
       end
         raise(ExceptionHandler::MissingToken, Message.missing_token)
     end
-  end
+end
